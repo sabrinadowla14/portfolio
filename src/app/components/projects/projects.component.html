@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mb-4" *ngFor="let project of projects">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ project.company }} | {{ project.duration }}
+          </h6>
+          <p class="card-text">{{ project.description }}</p>
+          <p><strong>Tech Stack:</strong> {{ project.techStack }}</p>
+          <a
+            *ngIf="project.link"
+            [href]="project.link"
+            class="btn btn-outline-primary btn-sm"
+            target="_blank"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
